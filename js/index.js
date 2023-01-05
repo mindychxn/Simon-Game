@@ -1,15 +1,27 @@
 var whichBtn = ["tleft", "tright", "bleft", "bright"];
 var gamePattern = [];
 var userPattern = [];
-var firstPress=false;
+var start=false;
 var level=1;
 
 document.addEventListener("keypress", function(){
-    if (!firstPress){
+    if (!start){
         $("#level-title").html("Level "+level).css("font-size", "2.5vw");
-        nextSequence();
-        firstPress=true;}
-    });
+        $(".btn").removeClass("game-over");
+        setTimeout(nextSequence, 500);
+        start=true;
+    }
+});
+
+function nextSequence(){
+    userPattern=[];
+    $("#level-title").text("Level "+level);
+    var randNum = Math.floor(Math.random()*4);
+    var chosenBtn = whichBtn[randNum];
+    gamePattern.push(chosenBtn);
+    animatePress(chosenBtn);
+    level++;
+}
 
 $(".btn").click(function (event){
     var userChosenBtn = event.target.id;
@@ -17,17 +29,7 @@ $(".btn").click(function (event){
     console.log(userPattern);
     animatePress(userChosenBtn);
     checkAns(userPattern.length - 1);
-    
 })
-
-function nextSequence(){
-    $("#level-title").text("Level "+level);
-    var randNum = Math.floor(Math.random()*4);
-    var chosenBtn = whichBtn[randNum];
-    gamePattern.push(chosenBtn);
-    $("#" + chosenBtn).fadeIn(100).fadeOut(100).fadeIn(100);
-    level++;
-}
 
 function animatePress(currentButton) {
     $("#"+currentButton).addClass("pressed");
@@ -42,6 +44,17 @@ function checkAns(currentLevel){
         }    
     }
     else {
-        console.log("wrong");
+        $("#level-title").html("Game Over.<p>Press Any Key to Restart</p>");
+        $("#level-title p").css("font-size", "1vw").css("letter-spacing", "0.5vw");
+        $(".btn").addClass("game-over");
+        startOver();
+        //setTimeout(function() {$(".button").removeClass("gsme-over")}, 400);
     }
+}
+
+function startOver(){
+    level=1;
+    gamePattern= [];
+    userPattern = [];
+    start=false;
 }

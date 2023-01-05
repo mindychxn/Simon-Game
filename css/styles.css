@@ -1,8 +1,8 @@
 body {
-    text-align: center;
-    background: radial-gradient(ellipse at bottom, #2e435b 0%, #090a0f 100%);
-    height: 100vh;
-  }
+  text-align: center;
+  background: radial-gradient(ellipse at bottom, #2e435b 0%, #090a0f 100%);
+  height: 100vh;
+}
 
 .title h1{
   font-family: 'Russo One', sans-serif;
@@ -54,3 +54,17 @@ body {
   background-color: #c0d2e5ab;
 }
 
+.game-over {
+  animation: flash 0.5s linear 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flash {
+  from {
+    background-color: #18222dd1;
+  }
+  to{
+    background-color: #fffae4db;
+    box-shadow: 0 0 1.5vw 0.7vw #fffae4;
+  }
+}
