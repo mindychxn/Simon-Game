@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background: radial-gradient(ellipse at bottom, #2e435b 0%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, #38516e 0%, #2e435b 10%, #090a0f 100%);
   height: 100vh;
 }
 
