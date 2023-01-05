@@ -1,0 +1,36 @@
+body {
+    text-align: center;
+    background-color: #223951;
+  }
+  
+  .title h1{
+    font-family: 'Russo One', sans-serif;
+    color: #fffae4db;
+    font-size: 6vw;
+    font-weight: 100;
+    margin-bottom: 0;
+    margin-top: 2vw;
+    letter-spacing: 20px;
+  }
+  .title p{
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #fffae4db;
+    font-size: medium;
+    letter-spacing: 7px;
+    margin-top:0.5vw;
+    margin-bottom: 0;
+  }
+  #level-title {
+    font-family: 'Michroma', sans-serif;
+    font-size: 1.8vw;
+    letter-spacing: 0.8vw;
+    margin-top: 2vw;
+    color: #fffae4db;
+  }
+  
+  .container {
+    display: block;
+    width: 50%;
+    margin: auto;
+  
+  }
