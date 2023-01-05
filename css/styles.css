@@ -14,18 +14,19 @@ body {
   letter-spacing: 20px;
 }
 .title p{
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #fffae4db;
-  font-size: medium;
-  letter-spacing: 7px;
-  margin-top:0.5vw;
+  font-weight: 100;
+  font-size: 1.2vw;
+  letter-spacing: 0.4vw;
+  margin-top:0.2vw;
   margin-bottom: 0; 
 }
   
 #level-title {
   font-family: 'Michroma', sans-serif;
   font-size: 1.8vw;
-  letter-spacing: 0.8vw;
+  letter-spacing: 0.7vw;
   margin-top: 2vw;
   color: #fffae4db;
 }
@@ -46,3 +47,4 @@ body {
   border-radius: 20%;
   background-color: #3f5874;
 }
+
