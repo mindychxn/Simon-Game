@@ -8,6 +8,8 @@ document.addEventListener("keypress", function(){
     if (!start){
         $("#level-title").html("Level "+level).css("font-size", "2.5vw");
         $(".btn").removeClass("game-over");
+        $("#level-title").removeClass("glow-text");
+        $("#level-title").css("text-shadow", "0 0 2vw #fffae4ed")
         setTimeout(nextSequence, 500);
         start=true;
     }
@@ -26,7 +28,6 @@ function nextSequence(){
 $(".btn").click(function (event){
     var userChosenBtn = event.target.id;
     userPattern.push(userChosenBtn);
-    console.log(userPattern);
     animatePress(userChosenBtn);
     checkAns(userPattern.length - 1);
 })
@@ -38,17 +39,16 @@ function animatePress(currentButton) {
 
 function checkAns(currentLevel){
     if (userPattern[currentLevel]===gamePattern[currentLevel]){
-        console.log("success");
         if (userPattern.length===gamePattern.length){
             setTimeout(nextSequence, 1000);
         }    
     }
     else {
-        $("#level-title").html("Game Over.<p>Press Any Key to Restart</p>");
+        $("#level-title").html("Game Over.<p>Press Any Key to Restart</p>").css({"font-size": "2vw", "letter-spacing": "0.5vw", "margin-bottom": "1vw"});
         $("#level-title p").css("font-size", "1vw").css("letter-spacing", "0.5vw");
+        $("#level-title p").addClass("glow-text");
         $(".btn").addClass("game-over");
         startOver();
-        //setTimeout(function() {$(".button").removeClass("gsme-over")}, 400);
     }
 }
 

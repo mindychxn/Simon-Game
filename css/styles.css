@@ -4,10 +4,13 @@ body {
   height: 100vh;
 }
 
+.title{
+  text-shadow: 0 0 2vw #ded9c4b1;
+}
 .title h1{
   font-family: 'Russo One', sans-serif;
   color: #fffae4db;
-  font-size: 6vw;
+  font-size: 5.8vw;
   font-weight: 100;
   margin-bottom: 0;
   margin-top: 2vw;
@@ -55,7 +58,7 @@ body {
 }
 
 .game-over {
-  animation: flash 0.5s linear 1;
+  animation: flash 0.5s linear 0.45s 1;
   animation-fill-mode: forwards;
 }
 
@@ -65,6 +68,19 @@ body {
   }
   to{
     background-color: #fffae4db;
-    box-shadow: 0 0 1.5vw 0.7vw #fffae4;
   }
 }
+
+.glow-text{
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 0;
+  }
+  to {
+    text-shadow: 0 0 2vw #fffae4ed;
+  }
+}
+
