@@ -21,6 +21,7 @@ function nextSequence(){
     var randNum = Math.floor(Math.random()*4);
     var chosenBtn = whichBtn[randNum];
     gamePattern.push(chosenBtn);
+    playSound(chosenBtn);
     animatePress(chosenBtn);
     level++;
 }
@@ -28,6 +29,7 @@ function nextSequence(){
 $(".btn").click(function (event){
     var userChosenBtn = event.target.id;
     userPattern.push(userChosenBtn);
+    playSound(userChosenBtn);
     animatePress(userChosenBtn);
     checkAns(userPattern.length - 1);
 })
@@ -35,6 +37,11 @@ $(".btn").click(function (event){
 function animatePress(currentButton) {
     $("#"+currentButton).addClass("pressed");
     setTimeout(function() {$("#"+currentButton).removeClass("pressed")}, 400);
+}
+
+function playSound(name) {
+    var audio = new Audio("sounds/"+name+".mp3");
+    audio.play();
 }
 
 function checkAns(currentLevel){
@@ -47,6 +54,7 @@ function checkAns(currentLevel){
         $("#level-title").html("Game Over.<p>Press Any Key to Restart</p>").css({"font-size": "2vw", "letter-spacing": "0.5vw", "margin-bottom": "1vw"});
         $("#level-title p").css("font-size", "1vw").css("letter-spacing", "0.5vw");
         $("#level-title p").addClass("glow-text");
+        playSound("lose");
         $(".btn").addClass("game-over");
         startOver();
     }
