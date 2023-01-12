@@ -40,7 +40,7 @@ function animatePress(currentButton) {
 }
 
 function playSound(name) {
-    var audio = new Audio("sounds/"+name+".mp3");
+    var audio = new Audio("Sounds/"+name+".mp3");
     audio.play();
 }
 
@@ -62,7 +62,6 @@ function checkAns(currentLevel){
 
 function startOver(){
     level=1;
-    gamePattern= [];
-    userPattern = [];
+    gamePattern=[];
     start=false;
 }
