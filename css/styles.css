@@ -4,6 +4,17 @@ body {
   height: 100vh;
 }
 
+p {
+  font-family: 'Montserrat', sans-serif;
+  color: #fffae4db;
+  font-weight: 100;
+  font-size: 1vw;
+  letter-spacing: 0.2vw;
+  margin-top: 0;
+  margin-bottom: 0; 
+  padding: 0;
+}
+
 .title{
   text-shadow: 0 0 2vw #ded9c4b1;
 }
@@ -37,9 +48,7 @@ body {
   
 .board {
   display: block;
-  width: 50%;
   margin: auto;
-  
 }
 
 .btn {
